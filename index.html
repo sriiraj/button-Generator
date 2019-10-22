@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button Generator</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="sstyle.css" rel="stylesheet">
+		<script src="js/modernizr.custom.js"></script>
+    </head>
+    <body>
+        <div class="box">
+            <div id="button">
+                <button id="testlabel">Test Button</button>
+            </div>
+            <hr>
+            <div class="inside_box">
+                <div class="row">
+                    <div><label for="buttonlabel">Button Label: </label><input class="input" id="buttonlabel" type="text" name="buttonlabel" value="" autocomplete="off" required></div>
+                    <div>
+                        <label for="fontsize">Font Size: </label><input class="input" id="fontsize"  size="2" type="number" name="fontsize" value="16" min="8" autocomplete="off" required>
+                    </div>
+                    <div style="align-items: center;display:flex">
+                        <label for="fontcolor">Font Color: </label><input class="input" id="fontcolor" type="color" value="#000000" required>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div style="display: flex;justify-content:space-center;align-items: center;">
+                    <label>Padding: Top-Right-Bottom-Left: </label>
+                            <input id="paddingtop" class="input" type="number" name="paddingtop" value="1" min="0" max="24" autocomplete="off" required> -
+                            <input id="paddingright" class="input" type="number" name="paddingright" value="6" min="0" max="48" autocomplete="off" required> -
+                            <input id="paddingdown" class="input" type="number" name="paddingdown" value="1" min="0" max="24" autocomplete="off" required> -
+                            <input id="paddingleft" class="input" type="number" name="paddingleft" value="6" min="0" max="48" autocomplete="off" required>
+                    </div>
+                    <div style="align-items: center;display:flex">
+                        <label>Background Color:</label><input class="input" id="buttonbackground" type="color" value="#dddddd" required></div>
+                </div>
+                <div class="row" >
+                    <div style="align-items: center;display:flex">
+                        <label >Border Color:</label><input class="input" id="bordercolor" type="color"  value="#dddddd" required>
+                    </div>
+                    <div>
+                        <label>Border Width:</label><input class="input" id="borderwidth" type="number" value="0" min="0" max="24" autocomplete="off" required>
+                    </div>
+                    <div>
+                        <label>Border Radius:</label><input class="input" id="borderradius" type="number" value="2" min="0" max="24" autocomplete="off" required>
+                    </div>
+                    <div>
+                        <label>Letter Spacing:</label><input class="input" id="letterspacing" type="number" value="1" min="0" max="24" autocomplete="off" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md-modal md-effect-16" id="modal-16">
+			<div class="md-content">
+				<h3>Generate Code</h3>
+				<div>
+                    <h2><strong>HTML:</strong></h2>
+                    <p id="htmltext"></p>
+                    <h2><strong>CSS:</strong></h2>
+                    <p id="csstext"></p>
+					<button class="md-close">Close me!</button>
+				</div>
+			</div>
+		</div>
+        <div id="button" style="padding-bottom:25px; padding-top: 0;">
+                <div class="generatebutton">
+                        <button id="btn"class="md-trigger" data-modal="modal-16"><span>Generate Code</span>
+                </div>
+            </div>
+            <div class="md-overlay"></div><!-- the overlay element -->
+            <script src="js/classie.js"></script>
+            <script src="js/modalEffects.js"></script>
+            <script>
+                var polyfilter_scriptpath = '/js/';
+            </script>
+            <script src="js/cssParser.js"></script>
+            <!-- <script src="js/css-filters-polyfill.js"></script> -->
+        <script src="js/scripting.js"></script>
+    </body>
+</html>
